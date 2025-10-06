@@ -1,0 +1,304 @@
+/* ===============================
+   RESET SINGKAT + VARIABEL TEMA
+   =============================== */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Palet warna (aman kontras): ganti sesuai selera */
+  --bg: #0f172a;        /* slate-900 */
+  --bg-soft: #111827;   /* gray-900 */
+  --text: #e5e7eb;      /* gray-200 */
+  --muted: #9ca3af;     /* gray-400 */
+  --card: #111827;      /* kartu */
+  --border: #1f2937;    /* gray-800 */
+  --primary: #7c3aed;   /* violet-600 */
+  --accent: #22d3ee;    /* cyan-400 */
+
+  /* Tipografi */
+  --font-body: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  --radius: 1.25rem;  /* 20px */
+  --shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f8fafc;
+    --text: #0f172a;
+    --muted: #475569;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --primary: #7c3aed;
+    --accent: #0ea5e9;
+  }
+}
+
+/* ===============================
+   BASE / GLOBAL
+   =============================== */
+body {
+  background: linear-gradient(180deg, var(--bg-soft), var(--bg));
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+
+h1, h2, h3 { line-height: 1.25; margin: 0 0 .5rem; }
+h1 { font-size: clamp(1.6rem, 1rem + 3vw, 2.6rem); }
+h2 { font-size: clamp(1.3rem, 0.8rem + 2vw, 2rem); }
+h3 { font-size: clamp(1.1rem, 0.9rem + 1vw, 1.25rem); }
+
+.lead { font-size: clamp(1rem, .9rem + .5vw, 1.125rem); color: var(--text); }
+.meta { color: var(--muted); font-size: .95rem; }
+
+/* ===============================
+   LAYOUT UTILITIES
+   =============================== */
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.section { padding: 3rem 0; }
+.highlight { background: linear-gradient(180deg, rgba(124,58,237,.12), transparent); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+}
+
+.grid-3 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+/* Naikkan menjadi 3 kolom di layar sedang/besar */
+@media (min-width: 900px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ===============================
+   SKIP LINK (AKSESIBILITAS)
+   =============================== */
+.skip-link {
+  position: absolute;
+  top: -1000px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: .75rem 1rem;
+  border-radius: .75rem;
+}
+.skip-link:focus { top: .5rem; left: .5rem; }
+
+/* ===============================
+   HEADER & NAV
+   =============================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(140%) blur(8px);
+  background: color-mix(in oklab, var(--bg) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .9rem 0;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: .3px;
+}
+
+.site-nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0; padding: 0;
+}
+.site-nav a {
+  color: var(--text);
+  padding: .5rem .8rem;
+  border-radius: .75rem;
+  border: 1px solid transparent;
+}
+.site-nav a:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+}
+
+/* ===============================
+   HERO (Identitas Diri)
+   =============================== */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+/* Di layar lebar, foto & teks berdampingan */
+@media (min-width: 820px) {
+  .hero-grid {
+    grid-template-columns: 320px 1fr;
+    gap: 2rem;
+  }
+}
+
+.hero-photo img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 9999px;               /* lingkaran */
+  border: 4px solid color-mix(in oklab, var(--accent) 60%, var(--card));
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+
+.accent { color: var(--accent); }
+
+/* CTA Button */
+.btn {
+  display: inline-block;
+  padding: .8rem 1.1rem;
+  border-radius: .9rem;
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid color-mix(in oklab, var(--primary) 70%, black);
+  font-weight: 600;
+  transition: transform .12s ease;
+}
+.btn:hover { transform: translateY(-2px); text-decoration: none; }
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+  margin-left: .5rem;
+}
+
+/* ===============================
+   TIMELINE PENDIDIKAN
+   =============================== */
+.timeline {
+  list-style: none; padding: 0; margin: 1rem 0 0;
+  border-left: 3px solid var(--border);
+}
+.timeline-item {
+  padding-left: 1rem; margin: 0 0 1rem 0; position: relative;
+}
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -8px; top: .6rem;
+  width: .75rem; height: .75rem;
+  border-radius: 999px;
+  background: var(--accent);
+  border: 2px solid var(--card);
+}
+
+/* ===============================
+   MOTTO
+   =============================== */
+.motto {
+  margin: 1rem 0 0;
+  font-size: clamp(1.05rem, 1rem + .5vw, 1.25rem);
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--accent);
+  background: color-mix(in oklab, var(--accent) 8%, transparent);
+  border-radius: .5rem;
+}
+.motto cite {
+  display: block;
+  margin-top: .5rem;
+  color: var(--muted);
+  font-style: normal;
+}
+
+/* ===============================
+   HOBI (grid ikon)
+   =============================== */
+.hobi-grid {
+  --col: minmax(160px, 1fr);
+  display: flex;
+  grid-template-columns: repeat(auto-fit, var(--col));
+  gap: 1rem;
+  padding-top: .5rem;
+  list-style: none; margin: 0;
+}
+
+.hobi-item {
+  display: flex;
+  place-items: center;
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.hobi-ikon {
+  display: flex;
+  place-items: center;
+  text-align: center;
+  font-size: 2rem;         /* perbesar emoji */
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 0 2.5rem;
+}
+.footer-inner {
+  display: flex; gap: .75rem; align-items: center; justify-content: space-between;
+  flex-wrap: wrap;
+}
+.social { display: flex; gap: .8rem; list-style: none; margin: 0; padding: 0; }
+.social a { padding: .4rem .6rem; border-radius: .6rem; border: 1px solid transparent; }
+.social a:hover { background: color-mix(in oklab, var(--accent) 10%, transparent); }
+
+/* ===============================
+   RESPONSIVE / MEDIA QUERIES
+   =============================== */
+/* Mobile-first sudah default di atas.
+   Tambahkan tweak untuk layar sangat kecil bila perlu. */
+@media (max-width: 360px) {
+  .site-nav ul { gap: .5rem; }
+  .btn { padding: .7rem .9rem; }
+}
+
+/* ===============================
+   AKSESIBILITAS TAMBAHAN
+   =============================== */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Kurangi animasi bila user memilih "reduce motion" */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
+}

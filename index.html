@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <!-- Metadata dasar -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portofolio digital pertama - Christian Arga Capah" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Portofolio | Christian Arga Capah</title>
+
+  <!-- Hubungkan ke file CSS eksternal -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Tips: kamu bisa pakai font Google (opsional). Contoh:
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  -->
+</head>
+<body>
+  <!-- Link "Skip" untuk aksesibilitas: memudahkan keyboard user langsung ke konten -->
+  <a class="skip-link" href="#konten-utama">Lewati ke konten</a>
+
+  <!-- HEADER / NAV -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#beranda" aria-label="Kembali ke Beranda">Universitas Negeri Medan</a>
+
+      <!-- Navigasi internal: arahkan ke setiap bagian -->
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <ul>
+          <li><a href="#beranda">Beranda</a></li>
+          <li><a href="#pendidikan">Pendidikan</a></li>
+          <li><a href="#pengalaman">Pengalaman</a></li>
+          <li><a href="#motto">Motto</a></li>
+          <li><a href="#hobi">Hobi</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- KONTEN UTAMA -->
+  <main id="konten-utama" tabindex="-1">
+    <!-- Identitas Diri -->
+    <section id="beranda" class="section hero" aria-labelledby="judul-beranda">
+      <div class="container hero-grid">
+        <div class="hero-photo">
+          <!-- Ganti src sesuai fotomu. Alt harus DESKRIPTIF -->
+          <img src="imgprofile.jpg" alt="Foto [Nama Kamu] menghadap kamera" width="280" height="280" loading="lazy" />
+        </div>
+
+        <div class="hero-text">
+          <h1 id="judul-beranda">Halo, saya <span class="accent">Christian Arga Capah</span></h1>
+          <p class="lead">
+            <!-- Deskripsi singkat (2–3 kalimat): siapa kamu, fokus, & tujuan -->
+            Saya saat ini adalah seorang mahasiswa di Universitas Negeri Medan dan masih semester 1. Saya asli orang Medan yang bertempat tinggal di Padang Bulan. Fun Fact diri saya adalah saya suka anime walaupun belum banyak yang saya tonton. Sekian perkenalan saya. Terima Kasih.
+          </p>
+
+          <!-- Tombol aksi (opsional: ganti tautan) -->
+          <div class="cta">
+            <a class="btn" href="#pengalaman">Lihat Pengalaman</a>
+            <a class="btn btn-outline" href="https://wa.me/qr/ILOY2XO2XSB2L1">Kontak Saya</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pendidikan -->
+    <section id="pendidikan" class="section" aria-labelledby="judul-pendidikan">
+      <div class="container">
+        <h2 id="judul-pendidikan">Pendidikan</h2>
+        <!-- Gunakan list berurutan sebagai "timeline" pendidikan -->
+        <ol class="timeline">
+          <!-- Contoh item -->
+          <li class="timeline-item">
+            <div class="timeline-content card">
+              <h3>SMA Raksana Medan</h3>
+              <p class="meta">2022-2024 • Jurusan IPA</p>
+            </div>
+          </li>
+
+          <li class="timeline-item">
+            <div class="timeline-content card">
+              <h3>SMP Kenanga Medan</h3>
+              <p class="meta">2019-2021</p>
+
+                <li class="timeline-item">
+            <div class="timeline-content card">
+              <h3>SD Kenanga Medan</h3>
+              <p class="meta">2013-2018</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Pengalaman: Organisasi, Proyek, atau Relawan -->
+    <section id="pengalaman" class="section" aria-labelledby="judul-pengalaman">
+      <div class="container">
+        <h2 id="judul-pengalaman">Pengalaman</h2>
+
+        <div class="grid-3">
+          <!-- Kartu pengalaman #1 -->
+          <article class="card" aria-labelledby="exp1-judul">
+            <h3 id="exp1-judul">Retreat — Camping</h3>
+            <ul>
+              <li>Berperan sebagai Wakil Ketua Panitia.</li>
+              <li>Bertugas membantu ketua dan mengawasi setiap Badan berjalan dengan lancar.</li>
+              <li>Skill: <strong>Tanggung Jawab, Kepemimpinan</strong>.</li>
+            </ul>
+          </article>
+
+          <!-- Kartu pengalaman #2 -->
+          <article class="card" aria-labelledby="exp2-judul">
+            <h3 id="exp2-judul">Sosialisasi — Konselor Sebaya</h3>
+            <ul>
+              <li>Mengetahui karakteristik dari setiap teman.</li>
+              <li>Memberi nasihat kepada teman yang membutuhkan konseling.</li>
+              <li>Skill: <strong>Komunikasi, Sosial</strong>.</li>
+            </ul>
+          </article>
+
+          <!-- Kartu pengalaman #3 -->
+          <article class="card" aria-labelledby="exp3-judul">
+            <h3 id="exp3-judul">Ekstrakulikuler — Marching Band</h3>
+            <ul>
+              <li>Sebagai pemain Tom.</li>
+              <li>Karena saya suka musik.</li>
+              <li>Skill: <strong>Menguasai Alat Musik, Menguasai Teori Musik</strong>.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Motto Hidup -->
+    <section id="motto" class="section highlight" aria-labelledby="judul-motto">
+      <div class="container">
+        <h2 id="judul-motto">Motto Hidup</h2>
+        <blockquote class="motto">
+          “<span>Kegagalan adalah guru terbaikmu. Belajarlah darinya.</span>”
+          <cite>— Christian Arga Capah (2025)</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- Hobi (visual/ikonik) -->
+    <section id="hobi" class="section" aria-labelledby="judul-hobi">
+      <div class="container">
+        <h2 id="judul-hobi">Hobi</h2>
+
+        <!-- Gunakan emoji berlabel (aksesibel) sebagai ikon -->
+        <ul class="hobi-grid">
+          <li>
+            <figure class="hobi-item card">
+              <div class="hobi-ikon" role="img" aria-label="Badminton">🏸</div>
+              <figcaption>Badminton</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="hobi-item card">
+              <div class="hobi-ikon" role="img" aria-label="Bermain Gitar">🎸</div>
+              <figcaption>Bermain Gitar</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="hobi-item card">
+              <div class="hobi-ikon" role="img" aria-label="Membaca">📚</div>
+              <figcaption>Membaca</figcaption>
+            </figure>
+          </li>
+          <li>
+            <figure class="hobi-item card">
+              <div class="hobi-ikon" role="img" aria-label="Anime">💻</div>
+              <figcaption>Menonton Anime</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="tahun"></span> Christian Arga Capah. Dibuat dengan HTML & CSS.</p>
+      <ul class="social">
+        <!-- Ganti tautan di bawah ini -->
+        <li><a href="https://www.instagram.com/arganz.exc?igsh=Mml5aDgyZGJvaTQ3">Instagram</a></li>
+        <li><a href="https://www.facebook.com/share/1Ghd6evhx8/" rel="me">Facebook</a></li>
+        <li><a href="https://www.tiktok.com/@arganz.exc?_t=ZS-90KGpolUq3A&_r=1" rel="me">Tiktok</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Script mini untuk tahun dinamis (boleh dihapus kalau tidak perlu) -->
+  <script>
+    document.getElementById('tahun').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
